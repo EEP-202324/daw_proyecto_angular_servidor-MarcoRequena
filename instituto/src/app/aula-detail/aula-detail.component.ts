@@ -24,12 +24,19 @@ export class AulaDetailComponent implements OnInit {
   }
 
   getAula(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
     this.aulaService.getAula(id)
       .subscribe(aula => this.aula = aula);
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    if (this.aula) {
+      this.aulaService.updateAula(this.aula)
+        .subscribe(() => this.goBack());
+    }
   }
 }

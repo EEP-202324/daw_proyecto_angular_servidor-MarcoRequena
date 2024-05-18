@@ -21,4 +21,19 @@ export class AulasComponent implements OnInit {
     this.aulaService.getAulas()
     .subscribe(aulas => this.aulas = aulas);
   }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.aulaService.addAula({ name } as Aula)
+      .subscribe(aula => {
+        this.aulas.push(aula);
+      });
+  }
+
+  delete(aula: Aula): void {
+    this.aulas = this.aulas.filter(h => h !== aula);
+    this.aulaService.deleteAula(aula.id).subscribe();
+  }
+
 }
