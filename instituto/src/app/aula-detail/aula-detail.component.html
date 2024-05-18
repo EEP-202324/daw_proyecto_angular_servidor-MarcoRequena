@@ -4,7 +4,8 @@
     <div><span>id: </span>{{aula.id}}</div>
     <div>
       <label for="aula-name">Nombre aula: </label>
-      <input id="aula-name" [(ngModel)]="aula.name" placeholder="name">
+      <input id="aula-name" [(ngModel)]="aula.name" placeholder="Nombre aula">
     </div>
-  
+    <button type="button" (click)="goBack()">
+      atrás</button>
   </div>

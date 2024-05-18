@@ -1,13 +1,11 @@
 <h2>AULAS</h2>
-
 <ul class="aulas">
   <li *ngFor="let aula of aulas">
-    <button [class.selected]="aula === selectedAula" type="button" (click)="onSelect(aula)">
-      <span class="badge">{{aula.id}}</span>
-      <span class="name">{{aula.name}}</span>
-    </button>
+    <a routerLink="/detail/{{aula.id}}">
+      <span class="badge">{{aula.id}}</span> {{aula.name}}
+    </a>
   </li>
 </ul>
 
-<app-aula-detail [aula]="selectedAula"></app-aula-detail>
+
 
