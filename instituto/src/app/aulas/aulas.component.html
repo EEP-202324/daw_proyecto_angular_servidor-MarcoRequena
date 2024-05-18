@@ -1,0 +1,6 @@
+<h2>{{aula.name | uppercase}} Details</h2>
+<div><span>id: </span>{{aula.id}}</div>
+<div>
+  <label for="name">Nombre aula: </label>
+  <input id="name" [(ngModel)]="aula.name" placeholder="name">
+</div>
