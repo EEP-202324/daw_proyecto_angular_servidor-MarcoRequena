@@ -7,5 +7,5 @@ import { Aula } from '../aula';
   styleUrls: ['./aula-detail.component.css']
 })
 export class AulaDetailComponent {
-  @Input() aula?: Aula;
+  @Input() aula?: Aula | undefined;
 }
