@@ -1,13 +1,13 @@
-package com.example.coches;
+package com.example.Institutoserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CochesApplication {
+public class InstitutoServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CochesApplication.class, args);
+		SpringApplication.run(InstitutoServerApplication.class, args);
 	}
 
 }
