@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
-import { Aula } from '../Aula';
+import { Aula } from '../aula';
+import { AULAS } from '../mock-aulas';
 
 @Component({
   selector: 'app-aulas',
   templateUrl: './aulas.component.html',
   styleUrls: ['./aulas.component.css']
 })
+
 export class AulasComponent {
-  aula: Aula = {
-    id: 1,
-    name: '3º B'
-  };
+  aulas = AULAS;
+  selectedAula?: Aula;
+
+  onSelect(aula: Aula): void {
+    this.selectedAula = aula;
+  }
 }

@@ -1,6 +1,18 @@
-<h2>{{aula.name | uppercase}} Details</h2>
-<div><span>id: </span>{{aula.id}}</div>
-<div>
-  <label for="name">Nombre aula: </label>
-  <input id="name" [(ngModel)]="aula.name" placeholder="name">
+<h2>AULAS</h2>
+<ul class="aulas">
+  <li *ngFor="let aula of aulas">
+    <button [class.selected]="aula === selectedAula" type="button" (click)="onSelect(aula)">
+      <span class="badge">{{aula.id}}</span>
+      <span class="name">{{aula.name}}</span>
+    </button>
+  </li>
+</ul>
+
+<div *ngIf="selectedAula">
+  <h2>{{selectedAula.name | uppercase}} Detalles</h2>
+  <div>id: {{selectedAula.id}}</div>
+  <div>
+    <label for="aula-name">Nombre aula: </label>
+    <input id="aula-name" [(ngModel)]="selectedAula.name" placeholder="name">
+  </div>
 </div>
