@@ -28,11 +28,11 @@ export class EmpleadoService {
     return this.httpClient.put(`${this.baseURL}/${id}`,empleado);
   }
 
-  //este metodo sirve para obtener o buscar un empleado
+  //este metodo sirve para ver los detalles de un empleado
   obtenerEmpleadoPorId(id:number):Observable<Empleado>{
     return this.httpClient.get<Empleado>(`${this.baseURL}/${id}`);
   }
-
+  //este metodo sirve para eliminar un empleado
   eliminarEmpleado(id:number): Observable<Object>{
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
